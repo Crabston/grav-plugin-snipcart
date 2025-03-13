@@ -1,0 +1,41 @@
+title: Snipcart Detail
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+
+        snipcart:
+          type: tab
+          title: Snipcart
+          fields:
+
+            snipcart_title:
+              type: spacer
+              title: Snipcart
+
+            header.product_id:
+              type: text
+              label: Product ID
+              size: small
+
+            header.price:
+              type: number
+              label: Price
+              size: small
+
+            header.weight:
+              type: number
+              label: Weight
+              size: small
+
+            header.description:
+              type: text
+              label: Description
+              size: long
+
