@@ -19,26 +19,26 @@ form:
               type: spacer
               title: Snipcart
 
-            header.product_id:
+            header.snipcart.product_id:
               type: text
               label: Product ID
               size: small
               validate:
                 required: true
 
-            header.price:
+            header.snipcart.price:
               type: number
               label: Price
               size: small
               validate:
                 required: true
 
-            header.weight:
+            header.snipcart.weight:
               type: number
               label: Weight
               size: small
 
-            header.description:
+            header.snipcart.description:
               type: text
               label: Description
               size: long

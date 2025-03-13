@@ -8,17 +8,17 @@
                 {{ snipcart_image.cropResize(400,400).html(page.header.title,'snipcart-thumb-image')|raw }}
             {% endif %}
             <span class="snipcart-price">
-            ${{ page.header.price }}
+            ${{ page.header.snipcart.price }}
             </span>
         </div>
         <p>
             <a href="#"
                 class="button snipcart-add-item"
-                data-item-id="{{ page.header.product_id }}"
+                data-item-id="{{ page.header.snipcart.product_id }}"
                 data-item-name="{{ page.header.title }}"
-                data-item-price="{{ page.header.price}}"
-                data-item-weight="{{ page.header.weight ?? 0}}"
-                data-item-description="{{ page.header.description ?? ''}}"
+                data-item-price="{{ page.header.snipcart.price}}"
+                data-item-weight="{{ page.header.snipcart.weight ?? 0}}"
+                data-item-description="{{ page.header.snipcart.description ?? ''}}"
                 data-item-url="{{ page.url }}"
                 {% spaceless %}
                 {% if snipcart_image %}

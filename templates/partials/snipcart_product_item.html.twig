@@ -8,7 +8,7 @@
             <a href="{{ page.url }}">{{ snipcart_image.cropResize(200,200).html('page.header.title','snipcart-thumb-image')|raw }}</a>
         {% endif %}
         <span class="snipcart-price">
-        ${{ page.header.price }}
+        ${{ page.header.snipcart.price }}
         </span>
     </div>
     <div class="snipcart-details">
@@ -19,9 +19,9 @@
         </a>
         <a href="#"
             class="button button-small snipcart-add-item"
-            data-item-id="{{ page.header.product_id }}"
+            data-item-id="{{ page.header.snipcart.product_id }}"
             data-item-name="{{ page.header.title }}"
-            data-item-price="{{ page.header.price }}"
+            data-item-price="{{ page.header.snipcart.price }}"
             data-item-url="{{ page.url }}"
                 {% spaceless %}
                     {% if snipcart_image %}
