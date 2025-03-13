@@ -9,6 +9,14 @@ form:
       type: tabs
       active: 1
       fields:
+        content:
+          fields:
+            header.snipcart.description:
+              ordering@: 2
+              type: text
+              label: Description
+              style: vertical
+              size: long
 
         snipcart:
           type: tab
@@ -40,12 +48,6 @@ form:
               size: medium
               validate:
                 type: commalist
-
-            header.snipcart.description: # TODO: move to content below title?
-              type: text
-              label: Description
-              toggleable: true
-              size: long
 
             header.snipcart.file_guid:
               type: text
@@ -92,7 +94,7 @@ form:
               validate:
                 type: bool
 
-            header.snipcart.metadata: # TODO: to JSON
+            header.snipcart.metadata:
               type: textarea
               label: JSON Metadata
               toggleable: true

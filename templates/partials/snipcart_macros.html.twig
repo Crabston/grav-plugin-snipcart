@@ -27,7 +27,7 @@
         {% if attributes.taxable is defined %}
             data-item-taxable="{{ attributes.taxable ? 'true' : 'false' }}"
         {% endif %}
-        {% if attributes.metadata %} {# TODO: to JSON is defined #}
+        {% if attributes.metadata %}
             data-item-metadata="{{ attributes.metadata }}"
         {% endif %}
 
