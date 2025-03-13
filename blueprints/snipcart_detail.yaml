@@ -33,13 +33,112 @@ form:
               validate:
                 required: true
 
-            header.snipcart.weight:
-              type: number
-              label: Weight
-              size: small
+            header.snipcart.categories:
+              type: selectize
+              label: Categories
+              toggleable: true
+              size: medium
+              validate:
+                type: commalist
 
             header.snipcart.description:
               type: text
               label: Description
+              toggleable: true
               size: long
 
+            dimensions:
+              type: section
+              title: Shipping Dimensions
+              fields:
+
+                header.snipcart.dimensions.weight:
+                  type: number
+                  label: Weight (g)
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.width:
+                  type: number
+                  label: Width (cm)
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.length:
+                  type: number
+                  label: Length (cm)
+                  toggleable: true
+                  size: small
+
+                header.snipcart.dimensions.height:
+                  type: number
+                  label: Height (cm)
+                  toggleable: true
+                  size: small
+
+            quantity:
+              type: section
+              title: Quantity
+              fields:
+
+                header.snipcart.quantity.min_quantity:
+                  type: number
+                  label: Min Quantity
+                  toggleable: true
+                  size: small
+
+                header.snipcart.quantity.max_quantity:
+                  type: number
+                  label: Max Quantity
+                  toggleable: true
+                  size: small
+
+                header.snipcart.quantity.quantity_step:
+                  type: number
+                  label: Quantity Step
+                  toggleable: true
+                  size: small
+
+            options:
+              type: section
+              title: Options
+              fields:
+
+                header.snipcart.stackable:
+                  type: toggle
+                  label: Stackable
+                  size: small
+                  toggleable: true
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.snipcart.shipable:
+                  type: toggle
+                  label: Shipable
+                  size: small
+                  toggleable: true
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.snipcart.taxable:
+                  type: toggle
+                  label: Taxable
+                  size: small
+                  toggleable: true
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
