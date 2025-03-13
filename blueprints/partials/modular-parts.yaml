@@ -17,10 +17,10 @@ form:
       default: date
       size: small
       options:
-        folder: TEMPLATE.PARTIALS.COLLECTION.ORDER_BY.OPTIONS.FOLDER
-        title: TEMPLATE.PARTIALS.COLLECTION.ORDER_BY.OPTIONS.TITLE
-        date: TEMPLATE.PARTIALS.COLLECTION.ORDER_BY.OPTIONS.DATE
-        default: TEMPLATE.PARTIALS.COLLECTION.ORDER_BY.OPTIONS.DEFAULT
+        folder: PLUGIN_ADMIN.FOLDER
+        title: PLUGIN_ADMIN.PAGE_TITLE
+        date: PLUGIN_ADMIN.DATE
+        default: PLUGIN_ADMIN.DEFAULT
 
     header.content.order.dir:
       type: select
@@ -28,5 +28,5 @@ form:
       default: desc
       size: small
       options:
-        asc: TEMPLATE.PARTIALS.COLLECTION.ORDER_DIR.OPTIONS.ASC
-        desc: TEMPLATE.PARTIALS.COLLECTION.ORDER_DIR.OPTIONS.DESC
+        asc: PLUGIN_ADMIN.ASCENDING
+        desc: PLUGIN_ADMIN.DESCENDING
