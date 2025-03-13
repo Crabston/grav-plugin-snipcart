@@ -1,3 +1,4 @@
+{% from "partials/snipcart_macros.html.twig" import add_to_cart %}
 {% set snipcart_image = page.media.images|first %}
 
 <div id="snipcart-detail" class="block-group">
@@ -12,60 +13,14 @@
             </span>
         </div>
         <p>
-            <a href="#"
-                class="button snipcart-add-item"
-                data-item-id="{{ page.header.snipcart.product_id }}"
-                data-item-name="{{ page.header.title }}"
-                data-item-price="{{ page.header.snipcart.price}}"
-                data-item-url="{{ page.url }}"
-                {% spaceless %}
-                {% if page.header.snipcart.categories %}
-                    data-item-categories="{{ page.header.snipcart.categories | join(', ') }}"
-                {% endif %}
-                {% if page.header.snipcart.description %}
-                    data-item-description="{{ page.header.snipcart.description }}"
-                {% endif %}
-
-                {% if page.header.snipcart.dimensions.weight %}
-                    data-item-weight="{{ page.header.snipcart.dimensions.weight }}"
-                {% endif %}
-                {% if page.header.snipcart.dimensions.width %}
-                    data-item-width="{{ page.header.snipcart.dimensions.width }}"
-                {% endif %}
-                {% if page.header.snipcart.dimensions.length %}
-                    data-item-length="{{ page.header.snipcart.dimensions.length }}"
-                {% endif %}
-                {% if page.header.snipcart.dimensions.height %}
-                    data-item-height="{{ page.header.snipcart.dimensions.height }}"
-                {% endif %}
-
-                {% if page.header.snipcart.quantity.min_quantity %}
-                    data-item-min-quantity="{{ page.header.snipcart.quantity.min_quantity }}"
-                {% endif %}
-                {% if page.header.snipcart.quantity.max_quantity %}
-                    data-item-max-quantity="{{ page.header.snipcart.quantity.max_quantity }}"
-                {% endif %}
-                {% if page.header.snipcart.quantity.quantity_step %}
-                    data-item-quantity-step="{{ page.header.snipcart.quantity.quantity_step }}"
-                {% endif %}
-
-                {% if page.header.snipcart.options.stackable %}
-                    data-item-stackable="{{ page.header.snipcart.options.stackable }}"
-                {% endif %}
-                {% if page.header.snipcart.options.shipable %}
-                    data-item-shipable="{{ page.header.snipcart.options.shipable }}"
-                {% endif %}
-                {% if page.header.snipcart.options.taxable %}
-                    data-item-taxable="{{ page.header.snipcart.options.taxable }}"
-                {% endif %}
-
-                {% if snipcart_image %}
-                    data-item-image="{{ snipcart_image.cropResize(50,50).url }}"
-                {% endif %}
-                {% endspaceless %}
-            >
-                <i class="fa fa-shopping-cart"></i> Add to Cart
-            </a>
+            {{ add_to_cart(
+                page.header.title,
+                page.url,
+                snipcart_image,
+                page.header.snipcart,
+                'button',
+                'Add to Cart',
+            ) | raw }}
         </p>
     </div>
     <div class="snipcart-details block">

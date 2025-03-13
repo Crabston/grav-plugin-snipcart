@@ -1,3 +1,4 @@
+{% from "partials/snipcart_macros.html.twig" import add_to_cart %}
 {% set snipcart_image = page.media.images|first %}
 
 <div id="snipcart-detail" class="block-group">
@@ -12,28 +13,14 @@
             </span>
         </div>
         <p>
-            <a href="#"
-                class="button snipcart-add-item"
-                data-item-id="{{ page.header.snipcart.product_id }}"
-                data-item-name="{{ page.header.title }}"
-                data-item-price="{{ page.header.snipcart.price }}"
-                data-item-url="{{ page.url }}"
-                data-item-payment-interval="{{ page.header.snipcart.interval }}"
-                {% if page.header.snipcart.interval_count %}
-                    data-item-payment-interval-count="{{ page.header.snipcart.interval_count }}"
-                {% endif %}
-                {% if page.header.snipcart.trial %}
-                    data-item-payment-trial="{{ page.header.snipcart.trial }}"
-                {% endif %}
-                {% spaceless %}
-                {% if snipcart_image %}
-                    data-item-image="{{ snipcart_image.cropResize(50,50).url }}"
-                {% endif %}
-                {% endspaceless %}
-
-            >
-                <i class="fa fa-shopping-cart"></i> Add to Cart
-            </a>
+            {{ add_to_cart(
+                page.header.title,
+                page.url,
+                snipcart_image,
+                page.header.snipcart,
+                'button',
+                'Add to Cart',
+            ) | raw }}
         </p>
     </div>
     <div class="snipcart-details block">

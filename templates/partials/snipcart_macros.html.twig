@@ -1,0 +1,72 @@
+{% macro add_to_cart(name, url, image, attributes, classes, text) %}
+    <a href="#"
+        class="{{ classes }} snipcart-add-item"
+        data-item-id="{{ attributes.product_id }}"
+        data-item-name="{{ name }}"
+        data-item-url="{{ url }}"
+        data-item-price="{{ attributes.price}}"
+        {% spaceless %}
+        {% if attributes.categories %}
+            data-item-categories="{{ attributes.categories | join(', ') }}"
+        {% endif %}
+        {% if attributes.description %}
+            data-item-description="{{ attributes.description }}"
+        {% endif %}
+
+        {# Shipping Dimensions #}
+        {% if attributes.dimensions.weight %}
+            data-item-weight="{{ attributes.dimensions.weight }}"
+        {% endif %}
+        {% if attributes.dimensions.width %}
+            data-item-width="{{ attributes.dimensions.width }}"
+        {% endif %}
+        {% if attributes.dimensions.length %}
+            data-item-length="{{ attributes.dimensions.length }}"
+        {% endif %}
+        {% if attributes.dimensions.height %}
+            data-item-height="{{ attributes.dimensions.height }}"
+        {% endif %}
+
+        {# Quantity #}
+        {% if attributes.quantity.min_quantity %}
+            data-item-min-quantity="{{ attributes.quantity.min_quantity }}"
+        {% endif %}
+        {% if attributes.quantity.max_quantity %}
+            data-item-max-quantity="{{ attributes.quantity.max_quantity }}"
+        {% endif %}
+        {% if attributes.quantity.quantity_step %}
+            data-item-quantity-step="{{ attributes.quantity.quantity_step }}"
+        {% endif %}
+
+        {# Options #}
+        {% if attributes.options.stackable %}
+            data-item-stackable="{{ attributes.options.stackable }}"
+        {% endif %}
+        {% if attributes.options.shipable %}
+            data-item-shipable="{{ attributes.options.shipable }}"
+        {% endif %}
+        {% if attributes.options.taxable %}
+            data-item-taxable="{{ attributes.options.taxable }}"
+        {% endif %}
+
+        {# other #}
+        {% if page.header.snipcart.interval %}
+            data-item-payment-interval="{{ page.header.snipcart.interval }}"
+        {% endif %}
+        {% if page.header.snipcart.interval_count %}
+            data-item-payment-interval-count="{{ page.header.snipcart.interval_count }}"
+        {% endif %}
+        {% if page.header.snipcart.trial %}
+            data-item-payment-trial="{{ page.header.snipcart.trial }}"
+        {% endif %}
+
+
+        {# Image #}
+        {% if image %}
+            data-item-image="{{ image.cropResize(50,50).url }}"
+        {% endif %}
+        {% endspaceless %}
+    >
+        <i class="fa fa-shopping-cart"></i> {{ text }}
+    </a>
+{% endmacro %}
