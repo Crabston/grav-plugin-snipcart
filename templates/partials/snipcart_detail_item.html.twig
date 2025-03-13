@@ -16,7 +16,9 @@
                 class="button snipcart-add-item"
                 data-item-id="{{ page.header.product_id }}"
                 data-item-name="{{ page.header.title }}"
-                data-item-price="{{ page.header.price }}"
+                data-item-price="{{ page.header.price}}"
+                data-item-weight="{{ page.header.weight ?? 0}}"
+                data-item-description="{{ page.header.description ?? ''}}"
                 data-item-url="{{ page.url }}"
                 {% spaceless %}
                 {% if snipcart_image %}
