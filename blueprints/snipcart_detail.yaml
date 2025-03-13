@@ -12,7 +12,7 @@ form:
 
         snipcart:
           type: tab
-          title: Snipcart
+          title: Snipcart Item
           fields:
 
             snipcart_title:
@@ -23,11 +23,15 @@ form:
               type: text
               label: Product ID
               size: small
+              validate:
+                required: true
 
             header.price:
               type: number
               label: Price
               size: small
+              validate:
+                required: true
 
             header.weight:
               type: number
