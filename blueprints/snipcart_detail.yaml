@@ -41,11 +41,61 @@ form:
               validate:
                 type: commalist
 
-            header.snipcart.description:
+            header.snipcart.description: # TODO: move to content below title?
               type: text
               label: Description
               toggleable: true
               size: long
+
+            header.snipcart.file_guid:
+              type: text
+              label: File GUID
+              toggleable: true
+              size: medium
+
+            header.snipcart.stackable:
+              type: toggle
+              label: Stackable
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.shipable:
+              type: toggle
+              label: Shipable
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.taxable:
+              type: toggle
+              label: Taxable
+              size: small
+              toggleable: true
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+            header.snipcart.metadata: # TODO: to JSON
+              type: textarea
+              label: JSON Metadata
+              toggleable: true
 
             dimensions:
               type: section
@@ -81,6 +131,12 @@ form:
               title: Quantity
               fields:
 
+                header.snipcart.quantity.quantity:
+                  type: number
+                  label: Default Quantity
+                  toggleable: true
+                  size: small
+
                 header.snipcart.quantity.min_quantity:
                   type: number
                   label: Min Quantity
@@ -99,14 +155,68 @@ form:
                   toggleable: true
                   size: small
 
-            options:
+            taxes:
               type: section
-              title: Options
+              title: Taxes
               fields:
 
-                header.snipcart.stackable:
+                header.snipcart.taxes.taxes:
+                  type: selectize
+                  label: Taxes to apply
+                  toggleable: true
+                  size: medium
+                  validate:
+                    type: commalist
+
+                header.snipcart.taxes.has_included:
                   type: toggle
-                  label: Stackable
+                  label: Taxes included
+                  size: small
+                  toggleable: true
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+            payment:
+              type: section
+              title: Payment
+              fields:
+
+                header.snipcart.payment.interval:
+                  type: select
+                  label: Interval
+                  toggleable: true
+                  size: medium
+                  options:
+                    Day: Day
+                    Week: Week
+                    Month: Month
+                    Year: Year
+
+                header.snipcart.payment.interval_count:
+                  type: number
+                  label: Interval Count
+                  toggleable: true
+                  size: small
+
+                header.snipcart.payment.trial:
+                  type: number
+                  label: Trial Days
+                  toggleable: true
+                  size: small
+
+            subscription:
+              type: section
+              title: Subscription
+              fields:
+
+                header.snipcart.subscription.recurring_shipping:
+                  type: toggle
+                  label: Recurring Shipping
                   size: small
                   toggleable: true
                   highlight: 1
@@ -117,28 +227,20 @@ form:
                   validate:
                     type: bool
 
-                header.snipcart.shipable:
-                  type: toggle
-                  label: Shipable
-                  size: small
+                header.snipcart.subscription.cancellation_action:
+                  type: select
+                  label: Cancellation Action
                   toggleable: true
-                  highlight: 1
-                  default: 1
+                  size: medium
                   options:
-                    1: PLUGIN_ADMIN.ENABLED
-                    0: PLUGIN_ADMIN.DISABLED
-                  validate:
-                    type: bool
+                    PartialRefundLastPayment: Partial Refund Last Payment
+                    CancelAtCurrentCycleEnd: Cancel At Current Cycle End
 
-                header.snipcart.taxable:
-                  type: toggle
-                  label: Taxable
-                  size: small
+                header.snipcart.subscription.pausing_action:
+                  type: select
+                  label: Pausing Action
                   toggleable: true
-                  highlight: 1
-                  default: 1
+                  size: medium
                   options:
-                    1: PLUGIN_ADMIN.ENABLED
-                    0: PLUGIN_ADMIN.DISABLED
-                  validate:
-                    type: bool
+                    KeepActiveUntilEndOfBillingCycle: Keep Active Until End Of Billing Cycle
+                    PauseAndRealignBillingCycleOnResume: Pause And Realign Billing Cycle On Resume
