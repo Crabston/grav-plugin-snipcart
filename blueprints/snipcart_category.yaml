@@ -14,4 +14,4 @@ form:
 
           fields:
             modular_title:
-              title: Snipcart Items
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.CATEGORY.MODULAR_TITLE
