@@ -89,3 +89,12 @@ PLUGIN_SNIPCART:
           OPTIONS:
             KEEP: Beibehalten bis Ende des Abrechnungszeitraums
             PAUSE: Pausieren und Abrechnungszeitraums bei Wiederaufnahme anpassen
+      CUSTOM:
+        TITLE: Benutzerdefinierte Felder
+        NAME:
+          LABEL: Name
+        OPTIONS:
+          LABEL: Optionen
+          DESCRIPTION: 'Liste von Optionen: nutze `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preisaufschlag hinzuzufügen'
+        REQUIRED:
+          LABEL: Erforderlich

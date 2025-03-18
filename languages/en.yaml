@@ -89,3 +89,12 @@ PLUGIN_SNIPCART:
           OPTIONS:
             KEEP: Keep Active Until End Of Billing Cycle
             PAUSE: Pause And Realign Billing Cycle On Resume
+      CUSTOM:
+        TITLE: Custom Fields
+        NAME:
+          LABEL: Name
+        OPTIONS:
+          LABEL: Options
+          DESCRIPTION: 'List of options: use `true,false` for checkboxes, add `[+10]` as a postfix to add a price modifier'
+        REQUIRED:
+          LABEL: Required

@@ -89,6 +89,21 @@
             data-item-pausing-action="{{ attributes.subscription.pausing_action }}"
         {% endif %}
 
+        {# Custom Fields #}
+        {% if attributes.custom is defined %}
+            {% for customField in attributes.custom %}
+				data-item-custom{{ loop.index }}-name="{{ customField.name }}"
+                data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
+
+	            {% if customField.type == 'textarea' %}
+                    data-item-custom{{ loop.index }}-type="textarea"
+				{% endif %}
+				{% if customField.options %}
+                    data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
+				{% endif %}
+            {% endfor %}
+        {% endif %}
+
         {% endspaceless %}
     >
         <i class="fa fa-shopping-cart"></i> {{ text }}

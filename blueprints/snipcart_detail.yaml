@@ -246,3 +246,44 @@ form:
                   options:
                     KeepActiveUntilEndOfBillingCycle: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.PAUSING_ACTION.OPTIONS.KEEP
                     PauseAndRealignBillingCycleOnResume: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.SUBSCRIPTION.PAUSING_ACTION.OPTIONS.PAUSE
+
+            custom:
+              type: section
+              title: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TITLE
+              fields:
+
+                header.snipcart.custom:
+                  type: list
+                  label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TITLE
+                  toggleable: true
+                  style: horizontal
+                  fields:
+
+                    .name:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.NAME.LABEL
+                      size: medium
+                      validate:
+                        required: true
+
+                    .options:
+                      type: selectize
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.LABEL
+                      description: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.DESCRIPTION
+                      toggleable: true
+                      size: medium
+                      validate:
+                        type: commalist
+
+                    .required:
+                      type: toggle
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.REQUIRED.LABEL
+                      toggleable: true
+                      size: small
+                      highlight: 1
+                      default: 1
+                      options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                      validate:
+                        type: bool
