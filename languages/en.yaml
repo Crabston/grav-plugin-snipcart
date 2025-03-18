@@ -1,5 +1,7 @@
 PLUGIN_SNIPCART:
   SETTINGS:
+    BUILT_IN_CSS: Use built in CSS
+    API_KEY: API Key
   TEMPLATES:
     CHECKOUT: Checkout
     DETAILS: Details
