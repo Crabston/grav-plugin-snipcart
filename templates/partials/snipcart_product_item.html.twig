@@ -16,7 +16,7 @@
     <p>
         <a href="{{ page.url }}"
             class="button button-small">
-            <i class="fa fa-info-circle"></i> Details
+            <i class="fa fa-info-circle"></i> {{ 'PLUGIN_SNIPCART.TEMPLATES.DETAILS'|t|e }}
         </a>
         {{ add_to_cart(
             page.header.title,
@@ -24,7 +24,7 @@
             snipcart_image,
             page.header.snipcart,
             'button button-small',
-            'Add',
+            'PLUGIN_SNIPCART.TEMPLATES.ADD'|t|e,
         ) | raw }}
     </p>
     </div>

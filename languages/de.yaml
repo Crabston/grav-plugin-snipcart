@@ -1,8 +1,10 @@
 PLUGIN_SNIPCART:
   SETTINGS:
   TEMPLATES:
-    CART:
-      CHECKOUT: Kasse
+    CHECKOUT: Kasse
+    DETAILS: Details
+    ADD: Hinzufügen
+    ADD_TO_CART: In den Warenkorb
   PAGE_OPTIONS:
     DEFAULT:
       MODULAR_TITLE: Snipcart Artikel

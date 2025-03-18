@@ -1,8 +1,10 @@
 PLUGIN_SNIPCART:
   SETTINGS:
   TEMPLATES:
-    CART:
-      CHECKOUT: Checkout
+    CHECKOUT: Checkout
+    DETAILS: Details
+    ADD: Add
+    ADD_TO_CART: Add to Cart
   PAGE_OPTIONS:
     DEFAULT:
       MODULAR_TITLE: Snipcart Items
