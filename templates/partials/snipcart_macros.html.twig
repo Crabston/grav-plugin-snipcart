@@ -4,7 +4,7 @@
         data-item-id="{{ attributes.product_id }}"
         data-item-name="{{ name }}"
         data-item-url="{{ url }}"
-        data-item-price="{{ attributes.price}}"
+        data-item-price="{{ attributes.price }}"
         {% spaceless %}
         {% if image %}
             data-item-image="{{ image.cropResize(50,50).url }}"
@@ -92,20 +92,18 @@
         {# Custom Fields #}
         {% if attributes.custom is defined %}
             {% for customField in attributes.custom %}
-				data-item-custom{{ loop.index }}-name="{{ customField.name }}"
+                data-item-custom{{ loop.index }}-name="{{ customField.name }}"
                 data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
 
-	            {% if customField.type == 'textarea' %}
+                {% if customField.type == 'textarea' %}
                     data-item-custom{{ loop.index }}-type="textarea"
-				{% endif %}
-				{% if customField.options %}
+                {% endif %}
+                {% if customField.options %}
                     data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
-				{% endif %}
+                {% endif %}
             {% endfor %}
         {% endif %}
-
         {% endspaceless %}
-    >
-        <i class="fa fa-shopping-cart"></i> {{ text }}
+    > <i class="fa fa-shopping-cart"></i> {{ text }}
     </a>
 {% endmacro %}
