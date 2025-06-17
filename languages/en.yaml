@@ -75,14 +75,10 @@ PLUGIN_SNIPCART:
         INTERVAL:
           LABEL: Interval
           OPTIONS:
-            DAY:
-              LABEL: Day
-            WEEK:
-              LABEL: Week
-            MONTH:
-              LABEL: Month
-            YEAR:
-              LABEL: Year
+            DAY: Day
+            WEEK: Week
+            MONTH: Month
+            YEAR: Year
         COUNT:
           LABEL: Interval count
         TRIAL:
