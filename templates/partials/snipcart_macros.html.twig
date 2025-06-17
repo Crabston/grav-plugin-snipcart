@@ -95,21 +95,17 @@
                 data-item-custom{{ loop.index }}-name="{{ customField.name }}"
                 data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
 
+                {% if customField.type != 'auto' %}
+                    data-item-custom{{ loop.index }}-type="{{ customField.type }}"
+                {% endif %}
+                {% if customField.options %}
+                    data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
+                {% endif %}
                 {% if customField.value %}
                     data-item-custom{{ loop.index }}-value="{{ customField.value }}"
                 {% endif %}
                 {% if customField.placeholder %}
                     data-item-custom{{ loop.index }}-placeholder="{{ customField.placeholder }}"
-                {% endif %}
-
-                {% if customField.type == 'textarea' %}
-                    data-item-custom{{ loop.index }}-type="textarea"
-                {% elseif customField.type == 'checkbox' %}
-                    data-item-custom{{ loop.index }}-type="checkbox"
-                {% endif %}
-
-                {% if customField.options %}
-                    data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
                 {% endif %}
             {% endfor %}
         {% endif %}

@@ -101,8 +101,20 @@ PLUGIN_SNIPCART:
         TITLE: Benutzerdefinierte Felder
         NAME:
           LABEL: Name
+        TYPE:
+          LABEL: Type
+          OPTIONS:
+            AUTO: Automatisch (Text, Nummer, Auswahl)
+            CHECKBOX: Checkbox (muss Optionen true,false hinzufügen)
+            TEXTAREA: Textfeld
+            READONLY: Schreibgeschützt
+            HIDDEN: Versteckt
         OPTIONS:
           LABEL: Optionen
-          DESCRIPTION: 'Liste von Optionen: nutze `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preisaufschlag hinzuzufügen'
+          DESCRIPTION: 'Liste der Optionen: Verwende `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preismodifikator für eine Option hinzuzufügen, z.B. `Option 1 [+10]` fügt 10 zum Preis hinzu, wenn ausgewählt.'
         REQUIRED:
           LABEL: Erforderlich
+        VALUE:
+          LABEL: Standardwert
+        PLACEHOLDER:
+          LABEL: Platzhalter

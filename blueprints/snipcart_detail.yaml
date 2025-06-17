@@ -265,6 +265,20 @@ form:
                       validate:
                         required: true
 
+                    .type:
+                      type: select
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.LABEL
+                      size: medium
+                      default:
+                      options:
+                        auto: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.AUTO
+                        checkbox: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.CHECKBOX
+                        textarea: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.TEXTAREA
+                        readonly: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.READONLY
+                        hidden: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.HIDDEN
+                      validate:
+                        required: true
+
                     .options:
                       type: selectize
                       label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.LABEL
@@ -286,3 +300,15 @@ form:
                         0: PLUGIN_ADMIN.NO
                       validate:
                         type: bool
+
+                    .value:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.VALUE.LABEL
+                      toggleable: true
+                      size: medium
+
+                    .placeholder:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.PLACEHOLDER.LABEL
+                      toggleable: true
+                      size: medium
