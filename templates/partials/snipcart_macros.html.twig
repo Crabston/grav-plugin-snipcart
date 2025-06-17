@@ -3,7 +3,7 @@
         class="{{ classes }} snipcart-add-item"
         data-item-id="{{ attributes.product_id }}"
         data-item-name="{{ name }}"
-        data-item-url="{{ url }}"
+        data-item-url="{{ url }}" {# TODO: not required anymore https://docs.snipcart.com/v3/setup/products #}
         data-item-price="{{ attributes.price }}"
         {% spaceless %}
         {% if image %}
@@ -13,7 +13,7 @@
             data-item-description="{{ attributes.description }}"
         {% endif %}
         {% if attributes.categories is defined %}
-            data-item-categories="{{ attributes.categories | join(', ') }}"
+            data-item-categories="{{ attributes.categories | join('|') }}"
         {% endif %}
         {% if attributes.file_guid is defined %}
             data-item-file-guid="{{ attributes.file_guid }}"
@@ -94,7 +94,12 @@
             {% for customField in attributes.custom %}
                 data-item-custom{{ loop.index }}-name="{{ customField.name }}"
                 data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
+                {# TODO: add
+                    - default value https://docs.snipcart.com/v3/setup/products#custom-fields-default-value
+                    - placeholder https://docs.snipcart.com/v3/setup/products#placeholder
+                #}
 
+                {# TODO: add checkbox https://docs.snipcart.com/v3/setup/products#3-checkbox #}
                 {% if customField.type == 'textarea' %}
                     data-item-custom{{ loop.index }}-type="textarea"
                 {% endif %}

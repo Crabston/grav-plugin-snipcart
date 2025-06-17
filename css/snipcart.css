@@ -47,7 +47,7 @@
     font-size: 26px;
     margin-right: 10px;
     vertical-align: middle; }
-  .snipcart-summary .snipcart-total-items {
+  .snipcart-summary .snipcart-items-count {
     position: absolute;
     background: #e74c3c;
     font-size: 12px;
@@ -61,7 +61,7 @@
     line-height: 16px;
     font-weight: bold; }
 
-#header #navbar span.snipcart-total-items, #header .snipcart-summary span.snipcart-total-items, #header.scrolled #navbar span.snipcart-total-items, #header.scrolled .snipcart-summary span.snipcart-total-items {
+#header #navbar span.snipcart-items-count, #header .snipcart-summary span.snipcart-items-count, #header.scrolled #navbar span.snipcart-items-count, #header.scrolled .snipcart-summary span.snipcart-items-count {
   color: #fff !important; }
 
 .snipcart-categories:after {
