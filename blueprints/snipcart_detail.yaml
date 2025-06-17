@@ -55,18 +55,17 @@ form:
               toggleable: true
               size: medium
 
-            header.snipcart.stackable: # TODO: change options: https://docs.snipcart.com/v3/setup/products#product-quantity
-              type: toggle
+            header.snipcart.stackable:
+              type: select
               label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.LABEL
-              size: small
+              HELP: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.HELP
+              size: medium
               toggleable: true
-              highlight: 1
-              default: 1
+              default: auto
               options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
+                auto: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.AUTO
+                never: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.NEVER
+                always: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.ALWAYS
 
             header.snipcart.shipable:
               type: toggle

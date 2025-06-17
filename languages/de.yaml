@@ -33,6 +33,11 @@ PLUGIN_SNIPCART:
         LABEL: Datei GUID
       STACKABLE:
         LABEL: Stapelbar
+        HELP: Wie mit mehreren Artikeln desselben Typs im Warenkorb umgegangen werden soll. Stapelfähig bedeutet, dass es als ein Artikel mit einer Menge gezählt wird, nicht stapelfähig bedeutet, dass es als mehrere Artikel gezählt wird.
+        OPTIONS:
+          AUTO: Automatisch wählen
+          NEVER: Nie stapeln
+          ALWAYS: Immer stapeln
       SHIPABLE:
         LABEL: Versandfähig
       TAXABLE:

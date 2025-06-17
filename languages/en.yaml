@@ -33,6 +33,11 @@ PLUGIN_SNIPCART:
         LABEL: File guid
       STACKABLE:
         LABEL: Stackable
+        HELP: How to handle multiple items of the same type in the cart. Stackable means it counts as one item with a quantity, non-stackable means it counts as multiple items.
+        OPTIONS:
+          AUTO: Choose automatically
+          NEVER: Never stack items
+          ALWAYS: Always stack items
       SHIPABLE:
         LABEL: Shipable
       TAXABLE:
