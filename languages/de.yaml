@@ -2,6 +2,13 @@ PLUGIN_SNIPCART:
   SETTINGS:
     BUILT_IN_CSS: Verwende eingebautes CSS
     API_KEY: API Schlüssel
+    VERSION: Version
+    VERSION_DESCRIPTION: Lass leer für die neueste Version oder gib eine spezifische Version wie `3.7.1` an
+    DEFAULT_CURRENCY: Standardwährung
+    MODAL_STYLE: Modalstil
+    MODAL_STYLE_DESCRIPTION: Wie das Snipcart Modal angezeigt werden soll, wenn Artikel zum Warenkorb hinzugefügt werden.
+    MODAL_STYLE_FULL_PAGE: ganze Seite
+    MODAL_STYLE_MODAL: Modal (seitlich)
   TEMPLATES:
     CHECKOUT: Kasse
     DETAILS: Details
