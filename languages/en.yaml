@@ -2,6 +2,13 @@ PLUGIN_SNIPCART:
   SETTINGS:
     BUILT_IN_CSS: Use built in CSS
     API_KEY: API Key
+    VERSION: Version
+    VERSION_DESCRIPTION: Leave empty for latest version, or specify a version like `3.7.1`
+    DEFAULT_CURRENCY: Default Currency
+    MODAL_STYLE: Modal Style
+    MODAL_STYLE_DESCRIPTION: How the Snipcart modal should be displayed when adding items to the cart.
+    MODAL_STYLE_FULL_PAGE: Full Page
+    MODAL_STYLE_MODAL: Modal (on side)
   TEMPLATES:
     CHECKOUT: Checkout
     DETAILS: Details
@@ -26,6 +33,11 @@ PLUGIN_SNIPCART:
         LABEL: File guid
       STACKABLE:
         LABEL: Stackable
+        HELP: How to handle multiple items of the same type in the cart. Stackable means it counts as one item with a quantity, non-stackable means it counts as multiple items.
+        OPTIONS:
+          AUTO: Choose automatically
+          NEVER: Never stack items
+          ALWAYS: Always stack items
       SHIPABLE:
         LABEL: Shipable
       TAXABLE:
@@ -63,14 +75,10 @@ PLUGIN_SNIPCART:
         INTERVAL:
           LABEL: Interval
           OPTIONS:
-            DAY:
-              LABEL: Day
-            WEEK:
-              LABEL: Week
-            MONTH:
-              LABEL: Month
-            YEAR:
-              LABEL: Year
+            DAY: Day
+            WEEK: Week
+            MONTH: Month
+            YEAR: Year
         COUNT:
           LABEL: Interval count
         TRIAL:
@@ -93,8 +101,20 @@ PLUGIN_SNIPCART:
         TITLE: Custom Fields
         NAME:
           LABEL: Name
+        TYPE:
+          LABEL: Type
+          OPTIONS:
+            AUTO: Automatically (Text, Number, Select)
+            CHECKBOX: Checkbox (must add options true,false)
+            TEXTAREA: Textarea
+            READONLY: Readonly
+            HIDDEN: Hidden
         OPTIONS:
           LABEL: Options
-          DESCRIPTION: 'List of options: use `true,false` for checkboxes, add `[+10]` as a postfix to add a price modifier'
+          DESCRIPTION: 'List of options: use `true,false` for checkboxes, add `[+10]` as a postfix to add a price modifier for an option, e.g. `Option 1 [+10]` will add 10 to the price if selected.'
         REQUIRED:
           LABEL: Required
+        VALUE:
+          LABEL: Default Value
+        PLACEHOLDER:
+          LABEL: Placeholder

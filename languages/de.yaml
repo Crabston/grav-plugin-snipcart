@@ -2,6 +2,13 @@ PLUGIN_SNIPCART:
   SETTINGS:
     BUILT_IN_CSS: Verwende eingebautes CSS
     API_KEY: API Schlüssel
+    VERSION: Version
+    VERSION_DESCRIPTION: Lass leer für die neueste Version oder gib eine spezifische Version wie `3.7.1` an
+    DEFAULT_CURRENCY: Standardwährung
+    MODAL_STYLE: Modalstil
+    MODAL_STYLE_DESCRIPTION: Wie das Snipcart Modal angezeigt werden soll, wenn Artikel zum Warenkorb hinzugefügt werden.
+    MODAL_STYLE_FULL_PAGE: ganze Seite
+    MODAL_STYLE_MODAL: Modal (seitlich)
   TEMPLATES:
     CHECKOUT: Kasse
     DETAILS: Details
@@ -26,6 +33,11 @@ PLUGIN_SNIPCART:
         LABEL: Datei GUID
       STACKABLE:
         LABEL: Stapelbar
+        HELP: Wie mit mehreren Artikeln desselben Typs im Warenkorb umgegangen werden soll. Stapelfähig bedeutet, dass es als ein Artikel mit einer Menge gezählt wird, nicht stapelfähig bedeutet, dass es als mehrere Artikel gezählt wird.
+        OPTIONS:
+          AUTO: Automatisch wählen
+          NEVER: Nie stapeln
+          ALWAYS: Immer stapeln
       SHIPABLE:
         LABEL: Versandfähig
       TAXABLE:
@@ -63,14 +75,10 @@ PLUGIN_SNIPCART:
         INTERVAL:
           LABEL: Intervall
           OPTIONS:
-            DAY:
-              LABEL: Tag
-            WEEK:
-              LABEL: Woche
-            MONTH:
-              LABEL: Monat
-            YEAR:
-              LABEL: Jahr
+            DAY: Tag
+            WEEK: Woche
+            MONTH: Monat
+            YEAR: Jahr
         COUNT:
           LABEL: Intervallanzahl
         TRIAL:
@@ -93,8 +101,20 @@ PLUGIN_SNIPCART:
         TITLE: Benutzerdefinierte Felder
         NAME:
           LABEL: Name
+        TYPE:
+          LABEL: Type
+          OPTIONS:
+            AUTO: Automatisch (Text, Nummer, Auswahl)
+            CHECKBOX: Checkbox (muss Optionen true,false hinzufügen)
+            TEXTAREA: Textfeld
+            READONLY: Schreibgeschützt
+            HIDDEN: Versteckt
         OPTIONS:
           LABEL: Optionen
-          DESCRIPTION: 'Liste von Optionen: nutze `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preisaufschlag hinzuzufügen'
+          DESCRIPTION: 'Liste der Optionen: Verwende `true,false` für Checkboxen, füge `[+10]` als Postfix hinzu, um einen Preismodifikator für eine Option hinzuzufügen, z.B. `Option 1 [+10]` fügt 10 zum Preis hinzu, wenn ausgewählt.'
         REQUIRED:
           LABEL: Erforderlich
+        VALUE:
+          LABEL: Standardwert
+        PLACEHOLDER:
+          LABEL: Platzhalter

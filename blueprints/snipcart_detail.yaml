@@ -56,17 +56,16 @@ form:
               size: medium
 
             header.snipcart.stackable:
-              type: toggle
+              type: select
               label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.LABEL
-              size: small
+              HELP: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.HELP
+              size: medium
               toggleable: true
-              highlight: 1
-              default: 1
+              default: auto
               options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
+                auto: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.AUTO
+                never: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.NEVER
+                always: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.STACKABLE.OPTIONS.ALWAYS
 
             header.snipcart.shipable:
               type: toggle
@@ -194,10 +193,10 @@ form:
                   toggleable: true
                   size: medium
                   options:
-                    Day: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.DAY.LABEL
-                    Week: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.WEEK.LABEL
-                    Month: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.MONTH.LABEL
-                    Year: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.YEAR.LABEL
+                    Day: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.DAY
+                    Week: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.WEEK
+                    Month: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.MONTH
+                    Year: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.PAYMENT.INTERVAL.OPTIONS.YEAR
 
                 header.snipcart.payment.interval_count:
                   type: number
@@ -266,6 +265,20 @@ form:
                       validate:
                         required: true
 
+                    .type:
+                      type: select
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.LABEL
+                      size: medium
+                      default:
+                      options:
+                        auto: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.AUTO
+                        checkbox: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.CHECKBOX
+                        textarea: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.TEXTAREA
+                        readonly: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.READONLY
+                        hidden: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.TYPE.OPTIONS.HIDDEN
+                      validate:
+                        required: true
+
                     .options:
                       type: selectize
                       label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.OPTIONS.LABEL
@@ -287,3 +300,15 @@ form:
                         0: PLUGIN_ADMIN.NO
                       validate:
                         type: bool
+
+                    .value:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.VALUE.LABEL
+                      toggleable: true
+                      size: medium
+
+                    .placeholder:
+                      type: text
+                      label: PLUGIN_SNIPCART.PAGE_OPTIONS.DETAIL.CUSTOM.PLACEHOLDER.LABEL
+                      toggleable: true
+                      size: medium

@@ -26,6 +26,19 @@ form:
       validate:
         type: bool
 
+    api_key:
+      type: text
+      size: medium
+      label: PLUGIN_SNIPCART.SETTINGS.API_KEY
+      default: 'YOUR_API_KEY'
+
+    version:
+      type: text
+      size: medium
+      label: PLUGIN_SNIPCART.SETTINGS.VERSION
+      description: PLUGIN_SNIPCART.SETTINGS.VERSION_DESCRIPTION
+      default: null
+
     built_in_css:
       type: toggle
       label: PLUGIN_SNIPCART.SETTINGS.BUILT_IN_CSS
@@ -37,8 +50,17 @@ form:
       validate:
         type: bool
 
-    api_key:
+    default_currency:
       type: text
       size: medium
-      label: PLUGIN_SNIPCART.SETTINGS.API_KEY
-      default: 'YOUR_API_KEY'
+      label: PLUGIN_SNIPCART.SETTINGS.DEFAULT_CURRENCY
+      default: usd
+
+    modal_style:
+      type: select
+      size: medium
+      label: PLUGIN_SNIPCART.SETTINGS.MODAL_STYLE
+      default: full-page
+      options:
+        full_page: PLUGIN_SNIPCART.SETTINGS.MODAL_STYLE_FULL_PAGE
+        modal: PLUGIN_SNIPCART.SETTINGS.MODAL_STYLE_MODAL

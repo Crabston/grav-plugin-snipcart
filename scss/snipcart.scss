@@ -28,7 +28,7 @@ $cart-accent: #e74c3c;
         vertical-align: middle;
     }
 
-    .snipcart-total-items {
+    .snipcart-items-count {
         position: absolute;
         background: $cart-accent;
         font-size: 12px;
@@ -47,7 +47,7 @@ $cart-accent: #e74c3c;
 // need to override an important setting in antimatter
 #header, #header.scrolled {
     #navbar, .snipcart-summary{
-        span.snipcart-total-items {
+        span.snipcart-items-count {
             color: #fff !important;
         }
     }

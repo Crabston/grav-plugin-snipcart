@@ -13,13 +13,13 @@
             data-item-description="{{ attributes.description }}"
         {% endif %}
         {% if attributes.categories is defined %}
-            data-item-categories="{{ attributes.categories | join(', ') }}"
+            data-item-categories="{{ attributes.categories | join('|') }}"
         {% endif %}
         {% if attributes.file_guid is defined %}
             data-item-file-guid="{{ attributes.file_guid }}"
         {% endif %}
         {% if attributes.stackable is defined %}
-            data-item-stackable="{{ attributes.stackable ? 'true' : 'false' }}"
+            data-item-stackable="{{ attributes.stackable }}"
         {% endif %}
         {% if attributes.shipable is defined %}
             data-item-shipable="{{ attributes.shipable ? 'true' : 'false' }}"
@@ -95,11 +95,17 @@
                 data-item-custom{{ loop.index }}-name="{{ customField.name }}"
                 data-item-custom{{ loop.index }}-required="{{ customField.required ? 'true' : 'false' }}"
 
-                {% if customField.type == 'textarea' %}
-                    data-item-custom{{ loop.index }}-type="textarea"
+                {% if customField.type != 'auto' %}
+                    data-item-custom{{ loop.index }}-type="{{ customField.type }}"
                 {% endif %}
                 {% if customField.options %}
                     data-item-custom{{ loop.index }}-options="{{ customField.options | join('|') }}"
+                {% endif %}
+                {% if customField.value %}
+                    data-item-custom{{ loop.index }}-value="{{ customField.value }}"
+                {% endif %}
+                {% if customField.placeholder %}
+                    data-item-custom{{ loop.index }}-placeholder="{{ customField.placeholder }}"
                 {% endif %}
             {% endfor %}
         {% endif %}
